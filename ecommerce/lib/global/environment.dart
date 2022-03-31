@@ -44,7 +44,7 @@ class _Config {
 Future<void> _initAndroidAppSetting(Environment env, Directory storage) async {
   final file = File(storage.path + '/AppSetting.xml').existsSync();
   File fileAndroidAppSetting;
-  String defaultServerAddress = 'url';
+  String defaultServerAddress = 'url:Demo'; //TODO
   if (!file) {
     fileAndroidAppSetting =
         await File(storage.path + '/AppSetting.xml').create(recursive: true);

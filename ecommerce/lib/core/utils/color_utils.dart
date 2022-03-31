@@ -56,6 +56,7 @@ class ColorUtils {
   static const black60 = Color.fromRGBO(18, 18, 18, 0.6);
   static const black86 = Color(0xBD121212);
   static const black40 = Color(0x66121212);
+  static const black = Colors.black;
   static const white = Colors.white;
   static const grey = Color(0xFF737373);
   static const pink = Color(0xFFFFE1E3);

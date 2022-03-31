@@ -1,8 +1,10 @@
-import 'package:ecommerce/ui/screens/splash_screen.dart';
+import 'package:ecommerce/ui/screens/home/home_screen.dart';
+import 'package:ecommerce/ui/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyRouter {
   static const String splash = '/splash';
+  static const String home = '/home';
 
   static PageRouteBuilder _buildRouteNavigationWithoutEffect(
       RouteSettings settings, Widget widget) {
@@ -19,6 +21,11 @@ class MyRouter {
         return _buildRouteNavigationWithoutEffect(
           settings,
           const SplashScreen(),
+        );
+      case home:
+        return _buildRouteNavigationWithoutEffect(
+          settings,
+          const HomeScreen(),
         );
       default:
         return _buildRouteNavigationWithoutEffect(

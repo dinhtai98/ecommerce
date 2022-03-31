@@ -17,6 +17,7 @@ class HiveBoxMap {
         Hive.registerAdapter(SessionEntityAdapter());
       },
     ),
+   
   };
 }
 
