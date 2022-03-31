@@ -16,18 +16,20 @@ class _RestClient implements RestClient {
   String? baseUrl;
 
   @override
-  Future<DeviceDto> getDevice({required id}) async {
+  Future<List<ProductTagDto>> getProductTags() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    final _result = await _dio.fetch<Map<String, dynamic>>(
-        _setStreamType<DeviceDto>(
+    final _result = await _dio.fetch<List<dynamic>>(
+        _setStreamType<List<ProductTagDto>>(
             Options(method: 'GET', headers: _headers, extra: _extra)
-                .compose(_dio.options, '/api/Device/${id}',
+                .compose(_dio.options, '/api/ProductTag/{Id}',
                     queryParameters: queryParameters, data: _data)
                 .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = DeviceDto.fromJson(_result.data!);
+    var value = _result.data!
+        .map((dynamic i) => ProductTagDto.fromJson(i as Map<String, dynamic>))
+        .toList();
     return value;
   }
 

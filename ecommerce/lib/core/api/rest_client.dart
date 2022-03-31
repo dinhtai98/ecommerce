@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:ecommerce/core/dtos/device/device_dto.dart';
+import 'package:ecommerce/core/dtos/product_tag/product_tag_dto.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'rest_client.g.dart';
@@ -8,8 +8,6 @@ part 'rest_client.g.dart';
 abstract class RestClient {
   factory RestClient(Dio dio, {String baseUrl}) = _RestClient;
 
-  @GET("/api/Device/{Id}")
-  Future<DeviceDto> getDevice({
-    @Path("Id") required String id,
-  });
+  @GET("/api/ProductTag/{Id}")
+  Future<List<ProductTagDto>> getProductTags();
 }
