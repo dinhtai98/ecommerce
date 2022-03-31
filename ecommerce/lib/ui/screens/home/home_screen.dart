@@ -4,8 +4,11 @@ import 'package:ecommerce/core/dtos/product_tag/product_tag_dto.dart';
 import 'package:ecommerce/core/utils/color_utils.dart';
 import 'package:ecommerce/core/utils/text_style_utils.dart';
 import 'package:ecommerce/core/view_models/interfaces/ihome_screen_view_model.dart';
+import 'package:ecommerce/global/router.dart';
+import 'package:ecommerce/ui/screens/product/product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 part 'widgets/tag_item_widget.dart';
@@ -52,7 +55,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         var productTag = _viewModel.productTags[index];
                         return GestureDetector(
                           onTap: () {
-                            //TODO
+                            Get.toNamed(
+                              MyRouter.productScreen,
+                              arguments: ProductScreenArguments(
+                                productsInTag: _viewModel.productTags,
+                                selectedTagId: productTag.id,
+                              ),
+                            );
                           },
                           child: TagItemWidget(productTag: productTag),
                         );
