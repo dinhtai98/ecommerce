@@ -71,6 +71,7 @@ dependencies:
   flutter_screenutil: ^5.3.1
   flutter_masked_text2: ^0.9.1
   percent_indicator: ^3.0.1
+  scrollable_positioned_list: ^0.2.3
 
 dev_dependencies:
   flutter_test:

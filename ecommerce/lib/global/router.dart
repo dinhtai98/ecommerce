@@ -1,10 +1,12 @@
 import 'package:ecommerce/ui/screens/home/home_screen.dart';
+import 'package:ecommerce/ui/screens/product/product_screen.dart';
 import 'package:ecommerce/ui/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyRouter {
   static const String splash = '/splash';
   static const String home = '/home';
+  static const String productScreen = '/productScreen';
 
   static PageRouteBuilder _buildRouteNavigationWithoutEffect(
       RouteSettings settings, Widget widget) {
@@ -26,6 +28,13 @@ class MyRouter {
         return _buildRouteNavigationWithoutEffect(
           settings,
           const HomeScreen(),
+        );
+      case productScreen:
+        return _buildRouteNavigationWithoutEffect(
+          settings,
+          ProductScreen(
+            arguments: settings.arguments as ProductScreenArguments,
+          ),
         );
       default:
         return _buildRouteNavigationWithoutEffect(
