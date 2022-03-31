@@ -1,4 +1,4 @@
-package com.ecommerce;
+package com.ecom.ecommerce;
 
 import android.content.Intent;
 import android.net.Uri;
