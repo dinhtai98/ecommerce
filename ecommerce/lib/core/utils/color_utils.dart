@@ -46,4 +46,27 @@ class ColorUtils {
       return const Color(0xffF2F2F2);
     }
   }
+  
+
+  static const red = Color(0xFFFF3B2F);
+  static const primaryRedColor = Color(0xFFFF3B2F);
+  static const subColor = Color(0xFF9796A1);
+  static const redDark = Color(0xFFE83939);
+  static const redActive = Color(0xFFE83939);
+  static const black60 = Color.fromRGBO(18, 18, 18, 0.6);
+  static const black86 = Color(0xBD121212);
+  static const black40 = Color(0x66121212);
+  static const white = Colors.white;
+  static const grey = Color(0xFF737373);
+  static const pink = Color(0xFFFFE1E3);
+  static const pinkDark = Color(0xFFFDB1B1);
+  static const greyBlue = Color(0xFF2E3E5C);
+  static const borderColor = Color(0xFFF5F4F9);
+  static final activeButtonBackgroudColor =
+      const Color(0xFFEA2027).withOpacity(0.1);
+  static const background = Color(0xFFF5F4F9);
+  static const greenDark = Color(0xFF00824B);
+  static const green = Color(0xFF2FC554);
+  static const titleColor = Color(0xFF222222);
+  static const textColor = Color(0xFF7D849A);
 }
