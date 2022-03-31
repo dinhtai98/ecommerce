@@ -1,8 +1,5 @@
 import 'package:ecommerce/ui/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-import 'environment.dart';
 
 class MyRouter {
   static const String splash = '/splash';
@@ -36,13 +33,6 @@ class MyRouter {
   }
 
   static void onRouteChanged(String screenName) {
-    if (EnvironmentUtil.currentEnv == Environment.dev) {
-      SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-          overlays: [SystemUiOverlay.top]);
-      SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-        systemNavigationBarColor: Colors.transparent,
-      ));
-    }
     if (['', null].contains(screenName)) {
       return;
     }

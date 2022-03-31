@@ -2,6 +2,7 @@ import 'package:ecommerce/global/providers.dart';
 import 'package:ecommerce/utils/navigation_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
@@ -47,22 +48,23 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [...viewModelProviders],
-      child: GetMaterialApp(
-        title: 'ECR Ticketing app',
-        navigatorKey: NavigationUtils.navigatorKey,
-        onGenerateRoute: (settings) => MyRouter.generateRoute(settings),
-        navigatorObservers: [MyRouteObserver()],
-        initialRoute: MyRouter.splash,
-        theme: ThemeData(
-          primarySwatch: Colors.red,
-          scaffoldBackgroundColor: Colors.white,
+      child: ScreenUtilInit(
+        builder: () => GetMaterialApp(
+          title: 'ECR Ticketing app',
+          navigatorKey: NavigationUtils.navigatorKey,
+          onGenerateRoute: (settings) => MyRouter.generateRoute(settings),
+          navigatorObservers: [MyRouteObserver()],
+          initialRoute: MyRouter.splash,
+          theme: ThemeData(
+            primarySwatch: Colors.red,
+            scaffoldBackgroundColor: Colors.white,
+          ),
+          debugShowCheckedModeBanner: false,
         ),
-        debugShowCheckedModeBanner: false,
       ),
     );
   }
