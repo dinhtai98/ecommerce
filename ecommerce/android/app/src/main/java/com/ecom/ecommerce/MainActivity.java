@@ -1,5 +1,5 @@
 
-package com.ecommerce;
+package com.ecom.ecommerce;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -42,7 +42,7 @@ public class MainActivity extends FlutterActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        com.ecommerce.PreventStatusBarExpansion.tryPrevent(this);
+        com.ecom.ecommerce.PreventStatusBarExpansion.tryPrevent(this);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class MainActivity extends FlutterActivity {
         if (isAndroidSDK30OrAbove() && requestFilePermissionChannelResult != null){
             requestFilePermissionChannelResult.success(Environment.isExternalStorageManager());
         }
-        com.ecommerce.PreventStatusBarExpansion.tryPrevent(this);
+        com.ecom.ecommerce.PreventStatusBarExpansion.tryPrevent(this);
         super.onRestart();
     }
 
