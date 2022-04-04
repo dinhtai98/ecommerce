@@ -102,7 +102,9 @@ class ProductScreenViewModel extends ChangeNotifier
     _productDisplay.clear();
     _products.clear();
     _productInTags = products;
-
+    products.map((e) => e.products).forEach((x) {
+      _products.addAll(x);
+    });
     _notifyTagButtons();
     _notifyProductGroups();
     notifyListeners();

@@ -25,4 +25,10 @@ class AppText {
       'Are you sure you want to end the day on this device?';
 
   static const lblHome = 'Home';
+  static const lblYourBasket = "Your Basket";
+  static const lblTotal = "Total";
+  static const lblEditProduct = "Edit product";
+  static const lblPay = "PAY";
+  static const lblTotalPrice = "Total Price";
+  static const lblClearBasket = "Clear basket";
 }
