@@ -1,10 +1,12 @@
 import 'dart:io';
 
+import 'package:ecommerce/core/view_models/interfaces/ibasket_screen_view_model.dart';
 import 'package:ecommerce/global/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -14,6 +16,14 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    Future.delayed(Duration.zero, () async {
+      await context.read<IBasketScreenViewModel>().loadBasket();
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(

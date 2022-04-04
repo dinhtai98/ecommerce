@@ -70,4 +70,6 @@ class ColorUtils {
   static const green = Color(0xFF2FC554);
   static const titleColor = Color(0xFF222222);
   static const textColor = Color(0xFF7D849A);
+  static const yellow = Color(0xffEFCD11);
+  static const blue = Color(0xff0000DD);
 }
